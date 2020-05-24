@@ -1,0 +1,119 @@
+
+$over1400: 1400px
+$width1400: 1399px
+$width1300: 1300px
+$width1200: 1200px
+$width1100: 1100px
+$width1050: 1050px
+$width1030: 1030px
+$width1000: 1000px
+$width900: 900px
+$width800: 800px
+$width797: 797px
+$tab: 768px // タブレット
+$pcOnly: 751px  // pcのみ
+$sp: 750px  // スマホ
+$width550: 550px
+$width470: 470px
+
+@mixin over1400
+  @media (min-width: ($over1400))
+    @content
+
+@mixin width1400
+  @media (max-width: ($width1400))
+    @content
+
+@mixin width1300
+  @media (max-width: ($width1300))
+    @content
+
+@mixin width1200
+  @media (max-width: ($width1200))
+    @content
+
+@mixin width1100
+  @media (max-width: ($width1100))
+    @content
+
+@mixin width1030
+  @media (max-width: ($width1030))
+    @content
+
+@mixin width1050
+  @media (max-width: ($width1050))
+    @content
+
+@mixin width1000
+  @media (max-width: ($width1000))
+    @content
+
+@mixin width900
+  @media (max-width: ($width900))
+    @content
+
+@mixin width800
+  @media (max-width: ($width800))
+    @content
+
+@mixin width797
+  @media (max-width: ($width797))
+    @content
+
+@mixin tab
+  @media (max-width: ($tab))
+    @content
+
+@mixin pcOnly
+  @media (min-width: ($pcOnly))
+    @content
+
+@mixin sp
+  @media (max-width: ($sp))
+    @content
+
+@mixin width470
+  @media (max-width: ($width470))
+    @content
+
+@mixin width550
+  @media (max-width: ($width550))
+    @content
+
+/* ------------------------------------ */
+//  関数
+/* ------------------------------------ */
+
+@mixin beforeContent($top,$right,$bottom,$left,$widh,$height)
+  position: absolute
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  width: $widh
+  height: $height
+  content: ""
+
+@mixin afterContent($top,$right,$bottom,$left,$widh,$height)
+  position: absolute
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  width: $widh
+  height: $height
+  content: ""
+
+
+$el: ''
+$maxSize: ''
+$pcSize: ''
+$spSize: ''
+
+@mixin fluidValue($el, $maxSize, $spSize)
+  @media (min-width: ($over1400))
+    #{$el}: #{$maxSize}px
+  @media (max-width: ($width1400))
+    #{$el}: #{$maxSize / 1400 * 100}vw
+  @media (max-width: ($sp))
+    #{$el}: #{$spSize / 750 * 100}vw

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,yBAAyB,CAAC;EACxB,aAAa,EAAE,OAAO;EACtB,OAAO,EAAE,SAAS;EAClB,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,CAAC;EACV,sBAAsB,EAAE,KAAK;EAC7B,uBAAuB,EAAE,KAAK;CAAG",
+    "sources": [
+        "gatsby-highlight.sass"
+    ],
+    "names": [],
+    "file": "gatsby-highlight.css"
+}

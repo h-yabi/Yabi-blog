@@ -1,0 +1,35 @@
+.footerWrap {
+  width: 100%;
+}
+
+.footer {
+  position: relative;
+  padding: 30px;
+  background: linear-gradient(-45deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8)), url("../../images/polygon-background1-preview.jpg");
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+.footer:after {
+  pointer-events: none;
+  background: linear-gradient(125deg, #8a5e5f, #d8bb93);
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: index-module--show-background--6HH7_ 1.2s 1s both;
+}
+
+.footer__title {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=Footer.module.css.map */
