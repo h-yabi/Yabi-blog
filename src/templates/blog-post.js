@@ -7,11 +7,9 @@ import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
 import * as styles from "../components/common/layout.module.sass"
 
-
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { previous, next } = pageContext
-  console.log(data)
 
   return (
     <Layout>
@@ -21,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <Header overview={post.frontmatter} />
       <main className={`${styles.contents} ${styles.contents_blog}`}>
-        <article className={styles.article}>
+        <article className={styles.article_detail}>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer>
             {/* <Bio /> */}

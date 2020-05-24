@@ -1,12 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-
-import { rhythm, scale } from "../utils/typography"
+import styles from "../components/common/layout.module.sass"
 
 const Layout = ({ children }) => {
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       {children}
     </div>
   )

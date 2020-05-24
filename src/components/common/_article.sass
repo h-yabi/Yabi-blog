@@ -1,0 +1,103 @@
+.contents
+  &_blog
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    position: relative
+    max-width: 930px
+    h2
+      position: relative
+      margin-top: 3rem
+      margin-bottom: 1.5rem
+      padding-bottom: .5rem
+      border-bottom: 3px solid #ddd
+      font-size: 26px
+      &:first-child
+        margin-top: 0
+      &:before
+        position: absolute
+        content: " "
+        width: 100px
+        bottom: -3px
+        height: 3px
+        background: linear-gradient(-45deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8))
+    h3
+      position: relative
+      margin: 2rem 0 1rem
+      padding-bottom: .3rem
+      font-size: 20px
+      &:before
+        position: absolute
+        content: " "
+        width: 100px
+        bottom: -3px
+        height: 2px
+        background-color: #dadada
+
+.article_detail
+  width: 70%
+  p
+    margin-bottom: 1.5rem
+    line-height: 1.5
+
+.article
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.article_list
+  width: 48%
+  background: #fff
+  border-bottom: 1px solid #ebf2f6
+  border-radius: 4px
+  box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05)
+  &:nth-child(n+3)
+    margin-top: 30px
+  a
+    display: block
+    &:hover
+      img
+        transform: scale(1.07)
+
+.article_list_img
+  @include responsive-ratio-box(50%)
+  img
+    @include object-fit
+    @include transition-hover()
+
+.article_list_text
+  padding: 20px
+  color: #4a4a4a
+  letter-spacing: .05em
+
+.article_title
+  margin-bottom: 10px
+
+.article_description
+  margin-bottom: 25px
+  font-size: 14px
+
+.tableOfContent
+  width: 25%
+  line-height: 1.5
+  p
+    margin-bottom: 0
+  ul
+    ul
+      margin-top: 0
+  a
+    display: block
+    padding: 3px 5px
+    color: #ccc
+    font-size: 14px
+    &:hover
+      background: rgba(253, 246, 227, .8)
+
+.icon_calendar
+  margin-right: 10px
+
+.article_list_date
+  color: #aaa
+  font-weight: normal
+  letter-spacing: .1em
+

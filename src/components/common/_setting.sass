@@ -117,3 +117,33 @@ $spSize: ''
     #{$el}: #{$maxSize / 1400 * 100}vw
   @media (max-width: ($sp))
     #{$el}: #{$spSize / 750 * 100}vw
+
+
+// responsive box
+@mixin responsive-ratio-box($box-ratio: 100%)
+  position: relative
+  height: auto
+  overflow: hidden
+  &::before
+    content: ''
+    display: block
+    padding-top: $box-ratio
+  &>*
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+
+@mixin object-fit($value: cover)
+  width: 100%
+  height: 100%
+  object-fit: $value
+
+// transition
+@mixin transition-hover($property: default, $duration: .24s, $ease: ease-in-out, $delay: 0s)
+  @if $property==default
+    transition: all $duration $ease $delay
+  @else
+    transition: $property $duration $ease $delay
