@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -8,8 +8,11 @@ import Footer from "../components/Footer/Footer"
 import * as styles from "../components/common/layout.module.sass"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
+
   const post = data.markdownRemark
   const { previous, next } = pageContext
+
+  // console.log(data)
 
   return (
     <Layout>
@@ -19,14 +22,14 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       />
       <Header overview={post.frontmatter} />
       <main className={`${styles.contents} ${styles.contents_blog}`}>
+        <div className={styles.tableOfContent} dangerouslySetInnerHTML={{__html : post.tableOfContents}} />
         <article className={styles.article_detail}>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer>
             {/* <Bio /> */}
           </footer>
         </article>
-        <div className={styles.tableOfContent} dangerouslySetInnerHTML={{__html : post.tableOfContents}} />
-        <nav>
+        <nav className={styles.pageNavi}>
           <ul>
             <li>
               {previous && (
@@ -50,6 +53,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   )
 }
 
+
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
@@ -61,6 +65,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      rawMarkdownBody
       excerpt(pruneLength: 160)
       html
       tableOfContents(

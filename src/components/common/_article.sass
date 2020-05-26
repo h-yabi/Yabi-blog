@@ -1,15 +1,21 @@
+@import '../common/_setting'
+
+
 .contents
   &_blog
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    align-items: flex-start
     position: relative
     max-width: 930px
+    @include sp
+      display: block
     h2
       position: relative
       margin-top: 3rem
       margin-bottom: 1.5rem
-      padding-bottom: .5rem
+      padding: .5rem 0
       border-bottom: 3px solid #ddd
       font-size: 26px
       &:first-child
@@ -21,10 +27,12 @@
         bottom: -3px
         height: 3px
         background: linear-gradient(-45deg, rgba(246, 255, 0, 0.8), rgba(255, 0, 161, 0.8))
+      @include sp
+        font-size: 18px
     h3
       position: relative
       margin: 2rem 0 1rem
-      padding-bottom: .3rem
+      padding: .5rem 0
       font-size: 20px
       &:before
         position: absolute
@@ -33,9 +41,12 @@
         bottom: -3px
         height: 2px
         background-color: #dadada
+      @include sp
+        font-size: 16px
 
 .article_detail
-  width: 70%
+  @include pcOnly
+    width: 70%
   p
     margin-bottom: 1.5rem
     line-height: 1.5
@@ -46,13 +57,17 @@
   justify-content: space-between
 
 .article_list
-  width: 48%
+  @include pcOnly
+    width: 48.5%
   background: #fff
   border-bottom: 1px solid #ebf2f6
   border-radius: 4px
   box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05)
+  @include sp
+    width: 100%
   &:nth-child(n+3)
-    margin-top: 30px
+    @include pcOnly
+      margin-top: 30px
   a
     display: block
     &:hover
@@ -61,6 +76,9 @@
 
 .article_list_img
   @include responsive-ratio-box(50%)
+  &:before
+    @include sp
+      padding-top: 35%
   img
     @include object-fit
     @include transition-hover()
@@ -77,9 +95,19 @@
   margin-bottom: 25px
   font-size: 14px
 
+.pageNavi
+  order: 3
+  width: 100%
+
 .tableOfContent
-  width: 25%
   line-height: 1.5
+  @include pcOnly
+    position: sticky
+    top: 20px
+    order: 2
+    width: 25%
+  @include sp
+    margin-bottom: 20px
   p
     margin-bottom: 0
   ul
@@ -88,7 +116,7 @@
   a
     display: block
     padding: 3px 5px
-    color: #ccc
+    color: #4a4a4a
     font-size: 14px
     &:hover
       background: rgba(253, 246, 227, .8)
