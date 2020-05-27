@@ -1,5 +1,4 @@
 import * as easings from "d3-ease"
-import img from "../images/polygon-background1-preview.jpg"
 
 export const fadeInDown = {
   opacity: 1,

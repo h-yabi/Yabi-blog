@@ -12,17 +12,14 @@ library.add(fab, fas, far) //他のコンポーネントから呼び出せるよ
 
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "../components/common/layout.module.sass"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const BlogIndex = ({ path, data }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-
 
   return (
     <Layout title={siteTitle}>
@@ -55,8 +52,6 @@ const BlogIndex = ({ path, data }) => {
                         <FontAwesomeIcon icon={["far", "calendar-alt"]} />
                       </span>
                       <span className={styles.article_list_date}>{frontmatter.date}</span>
-
-
                     </small>
                   </div>
                 </Link>
