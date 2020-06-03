@@ -1,32 +1,63 @@
 ---
 title: 【Gatsby】投稿の見出しにidを付与する方法
-description: 説明文が入ります。
+description: md（mdx）で作成した記事の見出しにidを付与する方法を備忘録として残しておきます。
 date: 2020-05-24
 mainImg: gatsby-img.jpg
 ---
 
 
-## タイトル
-テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
-### サブタイトル
-テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
-## タイトル2つ目
-テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
-### サブタイトル
-テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-
+## gatsby-remark-autolink-headersをインストール
 ```javascript
-const hello = 'hello'
+yarn add gatsby-remark-autolink-headers
 ```
 
+## gatsby-config.jsに追加
 ```javascript
-// FontAwesome
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import { fas } from "@fortawesome/free-solid-svg-icons"
-import { far } from "@fortawesome/free-regular-svg-icons"
-library.add(fab, fas, far) //他のコンポーネントから呼び出せるようにするための登録処理
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`],
+      },
+    },
+  ],
+}
 ```
+
+`gatsby-remark-prismjs`を使用している場合は、<br>
+`gatsby-remark-autolink-headers`の後にリストとして追加してください。<br>
+そうでないと、下記の問題が発生する可能性があります。
+<a href="https://github.com/gatsbyjs/gatsby/issues/5764">https://github.com/gatsbyjs/gatsby/issues/5764</a>
+
+下記に記述順の良い例、悪い例を記載します。
+
+
+## prismjs併用時の書き方（良い・悪い）
+```javascript
+// good
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      `gatsby-remark-autolink-headers`,
+      `gatsby-remark-prismjs`,
+    ],
+  },
+}
+
+// bad
+{
+  resolve: `gatsby-transformer-remark`,
+  options: {
+    plugins: [
+      `gatsby-remark-prismjs`, // should be placed after `gatsby-remark-autolink-headers`
+      `gatsby-remark-autolink-headers`,
+    ],
+  },
+}
+```
+
+## その他オプションについて
+<a href="https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/" target="_blank">https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/</a>
+
