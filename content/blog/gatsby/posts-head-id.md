@@ -3,7 +3,7 @@ title: 【Gatsby】投稿の見出しにidを付与する方法
 description: md（mdx）で作成した記事の見出しにidを付与する方法を備忘録として残しておきます。
 date: 2020-05-24
 mainImg: gatsby-img.jpg
-categories: ['React', 'Gatsby']
+categories: ['Gatsby']
 ---
 
 

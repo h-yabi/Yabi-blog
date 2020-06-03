@@ -1,25 +1,21 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Header_top from "./Header_top"
-import Header_posts from "./Header_posts"
-import styles from "./Header.module.sass"
+import React from 'react';
+import PropTypes from 'prop-types';
+import HeaderTop from './HeaderTop';
+import HeaderPosts from './HeaderPosts';
+import styles from './Header.module.sass';
 
 const Header = ({ path, overview }) => {
-  const topPage = path === "/" ? styles.topPage : ""
+	const topPage = path === '/' ? styles.topPage : '';
 
-  return (
-    <header className={`${styles.header} ${topPage}`}>
-      {topPage ? (
-        <Header_top overview={overview} />
-      ) : (
-        <Header_posts overview={overview} />
-      )}
-    </header>
-  )
-}
+	return (
+		<header className={`${styles.header} ${topPage}`}>
+			{topPage ? <HeaderTop overview={overview} /> : <HeaderPosts overview={overview} />}
+		</header>
+	);
+};
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+	siteTitle: PropTypes.string
+};
 
-export default Header
+export default Header;
