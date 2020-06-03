@@ -1,0 +1,27 @@
+@import '../common/_setting'
+
+.breadcrumb
+  width: 100%
+  margin-bottom: 30px
+  font-size: 14px
+  line-height: 1.7
+  @include sp
+    margin-bottom: 30px
+
+.link
+  position: relative
+  margin-right: 13px
+  padding-right: 20px
+  letter-spacing: .05em
+  &:hover
+    text-decoration: underline
+  &:before
+    display: block
+    position: absolute
+    top: -2px
+    right: 0
+    margin: auto
+    font-size: 12px
+    content: '>'
+
+

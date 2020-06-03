@@ -5,23 +5,24 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
+import Breadcrumb from "../components/Breadcrumb/Breadcrumb"
 import * as styles from "../components/common/layout.module.sass"
 
 const BlogPostTemplate = ({ data, pageContext }) => {
 
   const post = data.markdownRemark
+  const frontmatter = post.frontmatter
   const { previous, next } = pageContext
-
-  // console.log(data)
 
   return (
     <Layout>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={frontmatter.title}
+        description={frontmatter.description || post.excerpt}
       />
-      <Header overview={post.frontmatter} />
+      <Header overview={frontmatter} />
       <main className={`${styles.contents} ${styles.contents_blog}`}>
+        <Breadcrumb title={frontmatter.title} categories={frontmatter.categories} />
         <div className={styles.tableOfContent} dangerouslySetInnerHTML={{__html : post.tableOfContents}} />
         <article className={styles.article_detail}>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -75,6 +76,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY/MM/DD")
         description
+        categories
       }
     }
   }
