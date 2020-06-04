@@ -22,10 +22,10 @@ export const backgroundImg = {
     filter: 'blur(10px)',
   },
   config: {
-    duration: 1200,
+    duration: 800,
     easing: easings.easeCubicOut,
   },
-  delay: 700,
+  delay: 500,
 }
 
 

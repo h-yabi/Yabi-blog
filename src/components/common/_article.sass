@@ -149,7 +149,32 @@
   font-weight: normal
   letter-spacing: .1em
 
+code[class*="language-"]
+  margin: 0 3px
+  padding: 1px 5px !important
+
 pre[class*="language-"]
-  position: relative
-  margin-bottom: 30px
+  margin: 0 0 30px
+
+\:global
+  .gatsby-code-title
+    display: block
+    position: relative
+    z-index: 1
+    font-size: 13px
+    line-height: 1.5
+    span
+      display: inline
+      padding: 3px 10px
+      background: #777
+      border-top-left-radius: 0.3em
+      border-top-right-radius: 0.3em
+      color: #eee
+      letter-spacing: .07em
+    & + .gatsby-highlight
+      margin-top: -20px
+      pre[class*="language-"]
+        padding-top: 2em
+
+
 

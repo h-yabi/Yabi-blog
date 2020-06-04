@@ -6100,6 +6100,13 @@ gatsby-remark-images@^3.3.4:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
+gatsby-remark-prismjs-title@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs-title/-/gatsby-remark-prismjs-title-1.0.0.tgz#6df0be4e75acadc497c7ffffba6589d1abd8a445"
+  integrity sha512-VKAw7LGAbzyDlztUfhOri+jDTjLyOPCJCNgkdt2+61+SP8M9wYzzma8NvVyzHP7J9hx0jcYq8F50XQH5dE42ow==
+  dependencies:
+    unist-util-visit "~1.4.0"
+
 gatsby-remark-prismjs@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.5.2.tgz#77ad0d0a3298c59826c37aa22279c0d389a5c2c8"
@@ -13775,7 +13782,7 @@ unist-util-visit@2.0.2, unist-util-visit@^2.0.0, unist-util-visit@^2.0.2:
     unist-util-is "^4.0.0"
     unist-util-visit-parents "^3.0.0"
 
-unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
+unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.4.1, unist-util-visit@~1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.1.tgz#4724aaa8486e6ee6e26d7ff3c8685960d560b1e3"
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
