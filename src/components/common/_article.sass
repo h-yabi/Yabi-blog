@@ -53,17 +53,20 @@
     width: 70%
   @include sp
     padding: 15px
-  ol
+  ol, ul
     margin-bottom: 30px
-    padding: 10px 20px 10px 2.5rem
+    padding: 15px 20px 15px 2.5rem
     background: #efefef
     li
       margin-bottom: 5px
       font-size: 14px
-      list-style: decimal
+      list-style: disc
       line-height: 1.7
       &:last-child
         margin-bottom: 0
+  ol
+    li
+      list-style: decimal
   p
     margin-bottom: 1.5rem
     line-height: 1.8

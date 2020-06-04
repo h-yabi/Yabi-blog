@@ -1,5 +1,4 @@
 import React from "react"
-// Components
 import { Link, graphql } from "gatsby"
 const Categories = ({ pageContext, data }) => {
   const { category } = pageContext

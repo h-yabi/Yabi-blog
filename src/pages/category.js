@@ -1,7 +1,5 @@
 import React from "react"
-// Utilities
 import kebabCase from "lodash/kebabCase"
-// Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
@@ -16,7 +14,7 @@ const CategoryPage = ({
   <div>
     <Helmet title={title} />
     <div>
-      <h1>カテゴリー一覧</h1>
+      <h1>カテゴリ一覧</h1>
       <ul>
         {group.map(category => (
           <li key={category.fieldValue}>
@@ -31,6 +29,7 @@ const CategoryPage = ({
 )
 
 export default CategoryPage
+
 export const pageQuery = graphql`
   query {
     site {
