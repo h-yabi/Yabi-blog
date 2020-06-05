@@ -8,7 +8,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { fas } from "@fortawesome/free-solid-svg-icons"
 import { far } from "@fortawesome/free-regular-svg-icons"
-library.add(fab, fas, far) //他のコンポーネントから呼び出せるようにするための登録処理
+library.add(fab, fas, far) // fortawesome呼び出せるようにするための登録処理
 
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
