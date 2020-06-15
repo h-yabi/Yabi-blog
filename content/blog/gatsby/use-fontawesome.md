@@ -2,7 +2,7 @@
 title: 【Gatsby】FontAwesomeを簡単に使う方法
 description: 今回gatsbyで使用していますが、通常のReactでも同じように使用することができるかと思います。
 date: 2020-06-05
-mainImg: gatsby-img.jpg
+mainImg: thumbnail/gatsby-img.jpg
 categories: ['Gatsby']
 ---
 

@@ -2,7 +2,7 @@
 title: 【Gatsby】カテゴリ一覧ページを作成する方法
 description: Gatsbyでカテゴリ一覧を作成する方法を備忘録として残しておきます。
 date: 2020-06-03
-mainImg: gatsby-img.jpg
+mainImg: thumbnail/gatsby-img.jpg
 categories: ['Gatsby']
 ---
 
