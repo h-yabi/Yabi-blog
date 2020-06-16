@@ -427,3 +427,5 @@ enum COLORS {
 ```
 のように、後からCOLORSに追加することができる。
 
+## 参考：
+<a href="https://www.udemy.com/course/ts-for-js-developers/" target="_blank">https://www.udemy.com/course/ts-for-js-developers/</a>
