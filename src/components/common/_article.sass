@@ -15,7 +15,7 @@
     h2
       position: relative
       margin-top: 4rem
-      margin-bottom: 2rem
+      margin-bottom: 2.5rem
       padding: .5rem 0
       border-bottom: 3px solid #ddd
       font-size: 26px
@@ -35,12 +35,15 @@
         margin-top: 0
     h3
       position: relative
-      margin: 2.5rem 0 1rem
+      margin: 3.5rem 0 1.5rem
       padding: .2rem 1rem
       border-left: 5px solid #4a4a4a
       font-size: 20px
       @include sp
         font-size: 16px
+    strong
+      background: linear-gradient(transparent 65%, rgba(246, 255, 0, .3) 65%)
+
 
 .article_detail
   margin-bottom: 20px
@@ -138,6 +141,7 @@
     padding: 3px 5px
     color: #4a4a4a
     font-size: 14px
+    letter-spacing: .05em
     &:hover
       background: rgba(253, 246, 227, .8)
 
@@ -146,7 +150,7 @@
 
 .article_list_date
   color: #aaa
-  font-size: 14px
+  font-size: 12px
   font-weight: normal
   letter-spacing: .15em
 
@@ -156,6 +160,8 @@ code[class*="language-"]
 
 pre[class*="language-"]
   margin: 0 0 30px
+  letter-spacing: .05em
+  text-indent: -.5em
 
 \:global
   .gatsby-code-title
